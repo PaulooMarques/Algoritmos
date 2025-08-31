@@ -1,32 +1,32 @@
-
-
+# Caso1: Controle de Presença em Sala de Aula
+# Uma professora precisa registrar a presença dos alunos durante a semana.
+# • Cada dia da semana terá uma lista com os nomes dos presentes.
+# • No final, ela precisa:
+# 1. Saber quais alunos estiveram presentes todos os dias.
+# 2. Saber quais alunos faltaram em pelo menos um dia.
+# 3. Saber o número total de presenças por aluno.
 
 presencas = {
-    'Segunda': ['Gustavo', 'Julia', 'Fabricio', 'Fabiana','Pedro'],
-    'Terça': ['Gustavo', 'Julia', 'Fabricio','Pedro'],
-    'Quarta': ['Gustavo', 'Julia', 'Fabiana', 'Eduardo'],
-    'Quinta': ['Gustavo', 'Julia', 'Fabricio', 'Fabiana'],
-    'Sexta': ['Gustavo', 'Julia', 'Eduardo','Pedro']
+    "Segunda": ["Gustavo", "Julia", "Fabricio", "Fabiana", "Pedro"],
+    "Terça": ["Gustavo", "Julia", "Fabricio", "Pedro"],
+    "Quarta": ["Gustavo", "Julia", "Fabiana", "Eduardo"],
+    "Quinta": ["Gustavo", "Julia", "Fabricio", "Fabiana"],
+    "Sexta": ["Gustavo", "Julia", "Eduardo", "Pedro"],
 }
-
 
 alunos = set()
 for dia in presencas.values():
     alunos.update(dia)
 
-
-presentes_todos_dias = set(presencas['Segunda'])
+presentes_todos_dias = set(presencas["Segunda"])
 for dia in presencas.values():
     presentes_todos_dias &= set(dia)
 
-
 faltaram_algum_dia = alunos - presentes_todos_dias
-
 
 contador_presencas = {}
 for aluno in alunos:
     contador_presencas[aluno] = sum(1 for dia in presencas.values() if aluno in dia)
-
 
 print("=== Lista de Presenças da Semana ===")
 print(f"\n1. Presentes todos os dias: {sorted(presentes_todos_dias)}")

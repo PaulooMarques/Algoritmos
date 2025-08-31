@@ -13,48 +13,43 @@
 
 
 def analisar_participacao(atividades):
-    
+
     todos = set()
     for participantes in atividades.values():
         todos.update(participantes)
-    
-    
+
     participou_todas = todos.copy()
     for participantes in atividades.values():
         participou_todas &= set(participantes)
-    
-    
+
     participou_uma = []
     for pessoa in todos:
         count = sum(1 for p in atividades.values() if pessoa in p)
         if count == 1:
             participou_uma.append(pessoa)
-    
-    
+
     total = len(todos)
-    
+
     return {
-        'todas': sorted(participou_todas),
-        'uma': sorted(participou_uma),
-        'unicos': sorted(todos),
-        'total': total
+        "todas": sorted(participou_todas),
+        "uma": sorted(participou_uma),
+        "unicos": sorted(todos),
+        "total": total,
     }
 
-
-
 if __name__ == "__main__":
-    
+
     atividades = {
         "Palestra": ["Danilo", "Gabriel", "Fabiana"],
         "Workshop": ["Samuel", "João", "Danilo"],
-        "Mesa-redonda": ["Fabiana", "João", "Paula"]
+        "Mesa-redonda": ["Fabiana", "João", "Paula"],
     }
-    
+
     resultado = analisar_participacao(atividades)
-    
-    print("CONTROLE DE PARTICIPAÇÃO")
+
+    print("Controle de Participação")
     print("-" * 40)
-    print(f"1. Todas as atividades: {resultado['todas']}")
-    print(f"2. Apenas uma atividade: {resultado['uma']}")
-    print(f"3. Todos participantes: {resultado['unicos']}")
+    print(f"1. Apenas uma atividade: {resultado['uma']}")
+    print(f"2. Todas as atividades: {resultado['todas']}")
+    print(f"3. Todos os participantes: {resultado['unicos']}")
     print(f"4. Total distintos: {resultado['total']}")
