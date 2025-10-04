@@ -41,7 +41,8 @@ pedidos = [
     },
 ]
 
-
+# 1. Crie uma função que receba o nome de um cliente e retorne o valor total gasto (somando
+# todos os itens pedidos).
 def valor_total_gasto():
 
     print("Clientes de Hoje:")
@@ -59,7 +60,7 @@ def valor_total_gasto():
             return total
     return 0
 
-
+# 2. Crie uma função que descubra qual prato foi o mais vendido no dia.
 def prato_mais_vendido():
     contador_pratos = {}
 
@@ -88,9 +89,8 @@ print()
 print(f"Prato mais vendido: {prato_mais_vendido()}")
 print()
 
-
+# 3. Mostre um ranking com os 3 clientes que mais gastaram, em ordem decrescente.
 print("=== Top gastadores do dia ===")
-
 
 gastos_clientes = []
 for pedido in pedidos:
