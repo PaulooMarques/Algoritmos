@@ -34,9 +34,9 @@ def jogo_computador_adivinha(limite_min, limite_max):
         palpite = (esq + dir) // 2
 
         print(f"\nTentativa {tentativas}: Meu palpite é {palpite}")
-        print("  1 - Seu número é MENOR")
-        print("  2 - ACERTEI!")
-        print("  3 - Seu número é MAIOR")
+        print("  1 - Meu número é MENOR")
+        print("  2 - Acertouu!")
+        print("  3 - Meu número é MAIOR")
 
         while True:
             try:
@@ -49,7 +49,7 @@ def jogo_computador_adivinha(limite_min, limite_max):
                 continue
 
         if resposta == 2:
-            print(f"\n🎉 Acertei em {tentativas} tentativas usando busca binária!")
+            print(f"\n Acertei em {tentativas} tentativas usando busca binária!")
             return tentativas
         elif resposta == 1:
             dir = palpite - 1
@@ -91,7 +91,7 @@ while True:
     if nome:
         resultado = buscar_pessoa(pessoas, nome)
         if resultado:
-            print(f"✅ Encontrado: {resultado}")
+            print(f"Encontrado: {resultado}")
         else:
             print(f"'{nome}' não encontrado")
         break
